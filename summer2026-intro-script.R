@@ -74,6 +74,7 @@ data("nki70")	# make the nki70 data set available for use
 help("nki70")	# open a help page about the nki70 data set 
 View(nki70)	# open the nki70 data set in a data viewer
 
+
 ############################################
 # Describe the distribution of grade in this data set
 
@@ -170,13 +171,18 @@ word.table(grade.result) # outputs a table in a format to copy into Word
                          # 2. Highlight the output in Word.
                          # 3. Go to Insert>Table>Convert Text to Table.
 
-################################################
-# In-Class Task: describe age and get your results into Word
-# Here's a start
 
-describe(age,nki70,clr="skyblue")
-describe(age,nki70,clr="skyblue",fig=2)
+# Graphic options in SBP
 
+pie.plot("ER",nki70)	# pie chart for ER status
+pie.plot("Grade",nki70) # pie chart of Tumor Grade
 
 
+bar.plot("Age",nki70) # histogram for a numeric variable
+bar.plot("ER",nki70) # bar plot for a categorical variable
 
+box.plot("Age",nki70)	# box plot of Age for all data
+box.plot(Age~ER,nki70) # side-by-side boxplots of Age by ER status
+
+bar.plot("ER",nki70)
+bar.plot("ER",nki70,y.name="Estrogen Receptor",clr=c("gold","blue"))
