@@ -69,7 +69,10 @@ source(sbp.link)
 #############################################################
 # Read a data set into R
 
-data(nki70)
+get.package("penalized") # make the penalized package available for use
+data("nki70")	# make the nki70 data set available for use 
+help("nki70")	# open a help page about the nki70 data set 
+View(nki70)	# open the nki70 data set in a data viewer
 
 ############################################
 # Describe the distribution of grade in this data set
